@@ -21,7 +21,7 @@ This project is a part of the course **CVE Final year project** at University Of
 
     ```
     pip install -r requirements.txt
-    ```myenv
+    ```
 
 4. **Run the application**:
 
