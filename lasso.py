@@ -128,10 +128,10 @@ print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(test_Y, pre
 # Feature selection
 coef1 = pd.DataFrame(las.coef_.ravel())
 coef1['feat'] = train_X.columns
-c1 = coef['feat'].rows=['C', 'Bfs', 'Fa', 'W', 'Sp', 'Ca', 'Fa', 'a']
+c1 = coef1['feat'].rows=['C', 'Bfs', 'Fa', 'W', 'Sp', 'Ca', 'Fa', 'a']
 num_colors = 8
 colors = cm.rainbow(np.linspace(0, 1, num_colors))
-plt.bar(c1, coef[0], color=colors)
+plt.bar(c1, coef1[0], color=colors)
 plt.show()
 
 # In[181]:
@@ -143,3 +143,28 @@ dat1.plot(kind='bar', figsize=(7, 7))
 plt.grid(which='major', linestyle='-', linewidth='0.5', color='green')
 plt.grid(which='minor', linestyle=':', linewidth='0.5', color='black')
 plt.show()
+
+# collect inputs and make a dictionary
+input_dict = {}
+for i in values[:len(values) - 1]:
+    # print(f"Enter the value of {i}: ")
+    input_dict[i] = float(input(f"Enter the value of {i}: "))
+
+
+def predict_compressive_strength(model, **kwargs):
+    """
+    This function predicts the compressive strength of concrete based on the input values
+    :param model: The trained model
+    :param scaler: The trained scaler
+    :param kwargs: The input values
+    :return: The compressive strength of the concrete
+    """
+    # Create a dataframe from the input dictionary
+    input_df = pd.DataFrame(kwargs, index=[0])
+    # Predict the compressive strength
+    prediction = model.predict(input_df)
+    return prediction[0]
+
+
+predicted_strength = predict_compressive_strength(las, **input_dict)
+print(f"The predicted compressive strength of the concrete is: {predicted_strength}")

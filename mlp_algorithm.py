@@ -39,18 +39,18 @@ print('Number of missing values:', df.isnull().sum())
 
 # Data visualization 
 # 1 Correlation Matrix
-sns.heatmap(df.corr(), annot=True, linewidth=2)
-plt.title("Correlation between variables")
-plt.show()
+# sns.heatmap(df.corr(), annot=True, linewidth=2)
+# plt.title("Correlation between variables")
+# plt.show()
 
-# 2 Pair plot
-sns.pairplot(df, markers="h")
-plt.show()
+# # 2 Pair plot
+# sns.pairplot(df, markers="h")
+# plt.show()
 
-# 3 Distribution plot
-sns.distplot(df['concrete_compressive_strength'], bins=10, color='b')
-plt.ylabel("Frequency")
-plt.title('Distribution of concrete strength')
+# # 3 Distribution plot
+# sns.distplot(df['concrete_compressive_strength'], bins=10, color='b')
+# plt.ylabel("Frequency")
+# plt.title('Distribution of concrete strength')
 
 # In[8]:
 

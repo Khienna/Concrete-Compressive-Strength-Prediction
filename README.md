@@ -23,10 +23,34 @@ This project is a part of the course **CVE Final year project** at University Of
     pip install -r requirements.txt
     ```
 
-4. **Run the application**:
+4. **Run the various machine learning algorithms**:
 
     ```
-    python main.py
+    python mlp_algorithm.py 
+    
+    ```
+    - for mlp algorithm. 
+
+    ```
+     python svr_algorithm.py
+    
+    ```
+     - for svr algorithm.
+
+    ```
+    python lasso.py
+
+    ```
+     - for lasso algorithm.
+
+    ```
+    python MLR.py
     ```
 
+    - for MLR algorithm.
 
+     ```
+     python knn.py
+      ```
+
+      - for KNN algorithm. 
